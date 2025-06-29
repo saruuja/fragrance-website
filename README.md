@@ -21,7 +21,7 @@ Designed to showcase luxury scents, features, services, and contact details — 
 ---
 ## 🖼️ Screenshot
 
-📸![Fragrance Website Screenshot](/screenshot/screencapture-Desktop.png)
+📸![Fragrance Website Screenshot](/screenshot/screencapture-tablet.png)
 
 ---
 ## 📂 Folder Structure
