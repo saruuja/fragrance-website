@@ -1,0 +1,47 @@
+/* # Entry point (uses all above) */
+/* Index file*/
+@use 'abstracts/index' as *;
+
+/* base folder */
+@use 'base/reset';
+@use 'base/typography';
+/* layout folder */
+
+@use 'layout/features';
+@use 'layout/footer';
+@use 'layout/grid';
+@use 'layout/header';
+@use 'layout/hero';
+@use 'layout/services';
+@use 'layout/sidebar';
+
+/*  components folder */
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/forms';
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+ background: $background; 
+ font-family: $font-family;
+ font-size: $font-size-base;
+ margin: 0 auto;
+ padding: 0;
+ box-sizing: border-box;
+   min-height: 100vh;
+}
+img{
+  width: 100%;
+}
+
+/* font-size for loop */
+$i : 1;
+@for $i from 1 through 5 {
+  .fs-#{$i} {
+    font-size: $font-size-base * $i;
+  }
+}

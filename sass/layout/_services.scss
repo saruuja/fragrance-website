@@ -1,0 +1,66 @@
+/* services */
+
+@use '../abstracts/index' as *;
+@use '../components/buttons' as *;
+
+.services {
+  @include featureServices(map-get($featureServices-Colors, 'service-section-bg'), left);
+
+  .container {
+    @include container-style(grid, 90%, '', '');
+    grid-template-columns: 1fr;
+    gap: $space-md;
+
+    .services-grid {
+      @include featureServices-Card(map-get($featureServices-Colors, 'services'));
+
+      .service-img {
+        @include container-style(inline-block, 20%, '', '')
+      }
+
+      .service--title {
+        color: map-get($featureServices-Colors, 'sub-title-color');
+      }
+        .service--paraghraph{
+          margin-bottom: $space-xl;
+        }
+      .btn-secondary {
+        @extend %btn-base;
+        background-color: $secondary;
+        color: $features-bg;
+        transition: $transition;
+        /* hover */
+        &:hover {
+          background: darken($secondary, 10%);
+        }
+      }
+
+    }
+
+  }
+}
+
+
+.services {
+  @include responsive('md') {
+    .container {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .services-content {
+      .desc {
+        width: 55%;
+      }
+    }
+
+  }
+}
+
+.services {
+  @include responsive('lg') {
+    .container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+  }
+}

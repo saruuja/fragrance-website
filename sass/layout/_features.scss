@@ -1,0 +1,42 @@
+/* feature */
+
+@use '../abstracts/index' as *;
+
+.features{
+  @include featureServices(map-get($featureServices-Colors, 'feature-section-bg'), center);
+  .container{
+    @include container-style(grid, 95%, '', center);
+     grid-template-columns: 1fr;
+     gap: $space-md;
+     .features-grid{
+      @include featureServices-Card(map-get($featureServices-Colors, 'features'));
+      .features-img{
+        @include container-style(flex, 20%, center, center)
+      }
+      .features--title{
+        color: map-get($featureServices-Colors, 'sub-title-color');
+      }
+     }
+  }
+}
+.features{
+@include responsive('md'){
+  .container{
+    grid-template-columns: 1fr 1fr;
+  }
+  .features-content{
+    .desc{
+    width: 55%;
+  }
+}
+  
+}
+}
+.features{
+@include responsive('lg'){
+  .container{
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+}
+}

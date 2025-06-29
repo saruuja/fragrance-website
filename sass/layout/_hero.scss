@@ -1,0 +1,128 @@
+/* hero section */
+@use '../abstracts/index' as *;
+@use '../components/buttons' as *;
+
+.hero {
+  margin-top: $space-xl * 3;
+
+  .container {
+    @include container-style(flex, 95%, center, space-between);
+    flex-direction: column;
+    gap: $space-xl;
+    .hero-text {
+      width: 90%;
+      margin: 0;
+      padding: 0;
+
+      .sup-title {
+        color: $secondary;
+
+      }
+
+      .hero-text--title {
+        font-size: $font-size-lg;
+        font-weight: 300;
+        color: $primary;
+        line-height: 1.5;
+
+        span {
+          color: $secondary;
+          font-weight: 700;
+          font-size: $font-size-xl;
+        }
+      }
+
+      .hero-text--desc {
+        line-height: $line-height;
+        color: $text-color;
+        margin-bottom: $space-xl
+      }
+
+      .btn-primary {
+        @extend %btn-base;
+        background: $primary;
+        color: $features-bg;
+
+        /* hover */
+        &:hover {
+          background: darken($primary, 5%);
+        }
+      }
+    }
+    .hero-image{
+      width: 100%; 
+      height: auto; 
+    }
+  }
+
+}
+
+
+
+
+.hero::after {
+  content: "";
+  display: block;
+  height: 300px;
+  width: 350px;
+  left: 0;
+  bottom: -$space-xl * 2.5;
+  position: absolute;
+  background: $tertiary;
+  border-top-right-radius: $rounded-corners;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.hero::before {
+  content: "";
+  display: block;
+  height: 280px;
+  width: 280px;
+  right: -5px;
+  top: -1rem;
+  position: absolute;
+  background: $tertiary;
+  border-radius: $rounded-corners;
+  opacity: 0.2;
+  z-index: -1;
+  box-shadow: $shadow-hover;
+}
+
+
+
+/* reponsive */
+@include responsive-Max-width('sm') {
+  .hero::after {
+    bottom: -10rem;
+  }
+}
+
+.hero {
+  @include responsive('md') {
+    .container {
+      flex-direction: row;
+      width: 90%;
+      gap: 0;
+
+      .hero-text {
+        .hero-text--title {
+          font-size: $font-size-xl;
+
+          span {
+            font-size: $font-size-xl * 1.4;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hero {
+  @include responsive('lg') {
+    .container {
+      width: 80%;
+      gap: 5rem;
+    }
+  }
+}

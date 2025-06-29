@@ -1,0 +1,120 @@
+/* header nav*/
+@use 'maps' as *;
+@use 'variables' as *;
+
+@mixin header-footer($padding) {
+
+  background: map-get($headerFooterColors, 'background');
+  padding: $padding;
+  color: map-get($headerFooterColors, 'nav-color');
+  box-shadow: $box-shadow;
+}
+
+/* responsive header nav */
+@mixin responsive-Max-width($size) {
+  @media (max-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+/* container */
+
+@mixin container-style ($displyFlex, $width, $align-item, $justify-content) {
+  display: $displyFlex;
+  width: $width;
+  max-width: 1440px;
+  justify-content: $justify-content;
+  align-items: $align-item;
+  margin: $space-xs auto;
+}
+
+/* navigation style */
+@mixin nav-style ($nav-color , $flex-direction, $margin-left) {
+  &.nav {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: $flex-direction;
+
+      li {
+        margin-left: $margin-left;
+
+        a {
+          text-decoration: none;
+          text-transform: capitalize;
+          color: $nav-color;
+          transition: $transition;
+
+          /* hover */
+          &:hover {
+            color: darken($nav-color, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* logo */
+
+@mixin logo-style($font-size) {
+  &.logo {
+    text-transform: uppercase;
+    color: $background;
+    font-size: $font-size;
+    font-weight: bold;
+
+    span {
+      font-size: $font-size;
+      text-transform: lowercase;
+      color: $secondary;
+      margin-left: $space-md;
+    }
+  }
+}
+
+/* responsive */
+@mixin responsive($breakpoint) {
+  @media (min-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+// cards style
+@mixin featureServices($background, $text-align) {
+  background-color: $background;
+  margin-top: 10rem;
+  padding: $space-lg;
+  color: map-get($featureServices-Colors, 'text-color');
+  text-align: $text-align;
+  line-height: $line-height;
+
+  .title {
+    color: map-get($featureServices-Colors, 'title-color');
+    text-align: center;
+  }
+
+  .desc {
+    width: 75%;
+    text-align: center;
+    margin: $space-lg auto;
+  }
+}
+
+@mixin featureServices-Card($bg-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: $space-xl $space-md;
+  border-radius: $radius-md;
+  box-shadow: $box-shadow;
+  margin: $space-sm auto;
+  transition: $transition;
+
+  /* hover */
+  &:hover {
+    background-color: darken($bg-color, 10%);
+    transform: translate(0, -10px);
+  }
+}

@@ -1,0 +1,11 @@
+@use '../abstracts/index' as *;
+
+%btn-base{
+  padding:  .8rem $space-lg;
+  border: none;
+  border-radius: $radius-md;
+  box-shadow: $shadow-hover;
+  cursor: pointer;
+  text-transform: capitalize;
+  text-decoration: none;
+}

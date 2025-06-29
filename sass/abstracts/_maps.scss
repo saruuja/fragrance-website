@@ -1,0 +1,49 @@
+@use 'variables' as *;
+
+/* headerFooter colors */
+$headerFooterColors:(
+  background: $primary,
+  nav-color: $services-bg,
+  logo: $secondary,
+  footer-text: $tertiary,
+);
+
+
+/* feature and services colors */
+$featureServices-Colors:(
+  /* bg */
+  features: $features-bg,
+  feature-section-bg: $services-bg,
+  services: $services-bg,
+  service-section-bg: $features-bg,
+  /* text */
+  title-color: $primary,
+  sub-title-color: $title-color ,
+  text-color: $text-color,
+  footer-text: $tertiary,
+);
+
+
+/* light-mode Theme*/
+$light-mode: (
+  light-bg: $light-mode-bg,
+  light-text: $light-mode-text,
+);
+
+/*  dark-mode Theme*/
+$dark-mode: (
+  dark-bg: $dark-mode-bg,
+  dark-text: $dark-mode-text,
+);
+
+
+/* breakpoints */
+$breakpoints: (
+  xs: 0,
+  sm: 480px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1440px,
+);
+
